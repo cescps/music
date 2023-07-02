@@ -43,24 +43,34 @@ let soundBarsLottie = bodymovin.loadAnimation({
 
 let trackList = [
   {
-    name: "Play It",
-    artist: "Witchitaw",
-    path: "./songs/Play It - Witchitaw.mp3",
+    name: "hARAkiRI",
+    artist: "Duki, C.R.O.",
+    path: "/songs/harakiri.mp3",
   },
   {
-    name: "Real Time",
-    artist: "Tilden",
-    path: "./songs/Real Time - Tilden.mp3",
+    name: "antes de perderte",
+    artist: "Duki",
+    path: "/songs/antesdeperderte.mp3",
   },
   {
-    name: "Rec Center",
-    artist: "Xavy",
-    path: "./songs/Rec Center - Xavy.mp3",
+    name: "BABY HELLO",
+    artist: "Rauw, Bzrp",
+    path: "/songs/babyhello.mp3",
   },
   {
-    name: "Used To",
-    artist: "Nbhd Nick",
-    path: "./songs/Used To - Nbhd Nick.mp3",
+    name: "Bzrp Session 56",
+    artist: "Bzrp, Rauw",
+    path: "/songs/bzrprauw.mp3",
+  },
+  {
+    name: "WHERE SHE GOES",
+    artist: "Bad Bunny",
+    path: "/songs/whereshegoes.mp3",
+  },
+  {
+    name: "Baby Don't Hurt Me",
+    artist: "David Guetta",
+    path: "/songs/babydonthurtme.mp3",
   },
 ];
 
