@@ -107,6 +107,31 @@ let trackList = [
     artist: "Saiko",
     path: "/songs/supernova.mp3",
   },
+   {
+    name: "Fantasma|AVC",
+    artist: "Tainy, Jhayco",
+    path: "/songs/fantasma.mp3",
+  },
+   {
+    name: "Mami",
+    artist: "Rvfv, Pablo Mas",
+    path: "/songs/mami.mp3",
+  },
+   {
+    name: "MERCHO",
+    artist: "LiL CaKe, Migrantes...",
+    path: "/songs/mercho.mp3",
+  },
+   {
+    name: "Rara Vez",
+    artist: "Taiu, Milo j",
+    path: "/songs/raravez.mp3",
+  },
+   {
+    name: "PLAYA DEL INGLÉS",
+    artist: "Quevedo, Myke Towers",
+    path: "/songs/playadelingles.mp3",
+  },
 ];
 
 function loadTrack(trackIndex) {
