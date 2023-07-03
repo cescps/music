@@ -72,6 +72,41 @@ let trackList = [
     artist: "David Guetta",
     path: "/songs/babydonthurtme.mp3",
   },
+  {
+    name: "Ahora y Siempre",
+    artist: "Quevedo, Linton",
+    path: "/songs/ahoraysiempre.mp3",
+  },
+  {
+    name: "FEEL ME??",
+    artist: "Trueno",
+    path: "/songs/feelme.mp3",
+  },
+  {
+    name: "Tigini (Remix)",
+    artist: "Rvfv, Kikimoteleba",
+    path: "/songs/tigini.mp3",
+  },
+  {
+    name: "Reina",
+    artist: "C.R.O.",
+    path: "/songs/reina.mp3",
+  },
+  {
+    name: "Lo Siento BB",
+    artist: "Tainy, Bad Bunny...",
+    path: "/songs/losientobb.mp3",
+  },
+  {
+    name: "Como vas?",
+    artist: "Kidd Keo",
+    path: "/songs/comovas.mp3",
+  },
+  {
+    name: "Supernova",
+    artist: "Saiko",
+    path: "/songs/supernova.mp3",
+  },
 ];
 
 function loadTrack(trackIndex) {
