@@ -170,7 +170,8 @@ body {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  width: 480px;
+  width: 100%;
+  max-width: 480px;
   transition: all 0.75s cubic-bezier(0.075, 0.82, 0.165, 1);
 }
 
@@ -201,31 +202,23 @@ body {
   cursor: pointer;
 }
 
-.sound-bars {
-  flex: 1;
-  width: 50px;
-  height: 50px;
-  margin: 0 20px;
-}
-
 .player {
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 130px;
+  height: auto;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
   padding: 1rem;
+  margin: 0.5rem;
 }
 
 .track-info {
-  flex: 1;
-  margin-bottom: 1rem;
-  transition: all 0.25s ease;
-  pointer-events: none;
   text-align: center;
+  margin-bottom: 1rem;
+  pointer-events: none;
 }
 
 .track-name {
@@ -240,12 +233,18 @@ body {
 }
 
 .track-nav {
-  flex: 1;
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: center;
-  transition: all 0.25s ease;
+  margin-top: 0.5rem;
+}
+
+.sound-bars {
+  flex: 1;
+  width: 50px;
+  height: 50px;
+  margin: 0 10px;
 }
 
 .playpause-track,
@@ -261,9 +260,6 @@ body {
 
 @media (max-width: 900px) {
   .music-player-container {
-    width: 100%;
-    left: 50%;
-    transform: translateX(-50%);
     padding: 0 20px; /* Added padding to prevent player from sticking to the edges */
   }
 
