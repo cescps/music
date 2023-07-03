@@ -128,14 +128,14 @@ function playTrack() {
   currentTrack.play();
   isPlaying = true;
   playPauseBtn.innerHTML = '<ion-icon name="pause-sharp"></ion-icon>';
-  soundBarsLottie.playSegments([0, 120], true);
+  soundBarsLottie.play();
 }
 
 function pauseTrack() {
   currentTrack.pause();
   isPlaying = false;
   playPauseBtn.innerHTML = '<ion-icon name="play-sharp"></ion-icon>';
-  soundBarsLottie.stop();
+  soundBarsLottie.pause();
 }
 
 function nextTrack() {
