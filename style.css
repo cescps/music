@@ -210,10 +210,10 @@ body {
 
 .player {
   display: flex;
-  flex-direction: column; /* Changed flex-direction to column */
+  flex-direction: column;
   justify-content: flex-start;
   align-items: center;
-  height: 130px; /* Increased height to accommodate the buttons below */
+  height: 130px;
   border-radius: 4px;
   background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(10px);
@@ -222,10 +222,10 @@ body {
 
 .track-info {
   flex: 1;
-  margin-bottom: 1rem; /* Added margin bottom */
+  margin-bottom: 1rem;
   transition: all 0.25s ease;
   pointer-events: none;
-  text-align: center; /* Center-align text */
+  text-align: center;
 }
 
 .track-name {
@@ -244,7 +244,7 @@ body {
   display: flex;
   flex-direction: row;
   align-items: center;
-  justify-content: center; /* Center-align buttons */
+  justify-content: center;
   transition: all 0.25s ease;
 }
 
@@ -261,9 +261,10 @@ body {
 
 @media (max-width: 900px) {
   .music-player-container {
-    width: 400px;
+    width: 100%;
     left: 50%;
     transform: translateX(-50%);
+    padding: 0 20px; /* Added padding to prevent player from sticking to the edges */
   }
 
   .track-name {
