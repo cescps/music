@@ -50,7 +50,7 @@ body {
   cursor: pointer;
 }
 
-.avatar {
+/* .avatar {
   position: absolute;
   top: -30px;
   width: 100px;
@@ -61,7 +61,7 @@ body {
 .avatar img {
   width: 100%;
   height: 100%;
-}
+} */
 
 .sound-bars {
   flex: 1;
