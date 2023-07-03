@@ -185,14 +185,27 @@ body {
   opacity: 0;
 }
 
+.player {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: flex-start;
+  height: auto;
+  border-radius: 4px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(10px);
+  padding: 1rem;
+  margin: 0.5rem;
+  position: relative;
+}
+
 .toggle-player {
   position: absolute;
-  top: -20px;
-  right: -20px;
+  top: 0.5rem;
+  left: 0.5rem;
   z-index: 2;
-  width: 40px;
-  height: 40px;
-  border-radius: 100%;
+  width: 30px;
+  height: 30px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -200,19 +213,6 @@ body {
   backdrop-filter: blur(10px);
   border: 1px solid rgba(255, 255, 255, 0.2);
   cursor: pointer;
-}
-
-.player {
-  display: flex;
-  flex-direction: column;
-  justify-content: flex-start;
-  align-items: center;
-  height: auto;
-  border-radius: 4px;
-  background: rgba(255, 255, 255, 0.15);
-  backdrop-filter: blur(10px);
-  padding: 1rem;
-  margin: 0.5rem;
 }
 
 .track-info {
