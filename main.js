@@ -43,6 +43,22 @@ let soundBarsLottie = bodymovin.loadAnimation({
 
 let trackList = [
   {
+    name: "MOJABI GHOST",
+    artist: "Tainy, Bad Bunny",
+    path: "/songs/mojabighost.mp3",
+  },
+   {
+    name: "WHERE SHE GOES",
+    artist: "Bad Bunny",
+    path: "/songs/whereshegoes.mp3",
+  },
+  {
+    name: "BABY HELLO",
+    artist: "Rauw, Bzrp",
+    path: "/songs/babyhello.mp3",
+  },
+
+  {
     name: "hARAkiRI",
     artist: "Duki, C.R.O.",
     path: "/songs/harakiri.mp3",
@@ -52,20 +68,11 @@ let trackList = [
     artist: "Duki",
     path: "/songs/antesdeperderte.mp3",
   },
-  {
-    name: "BABY HELLO",
-    artist: "Rauw, Bzrp",
-    path: "/songs/babyhello.mp3",
-  },
+  
   {
     name: "Bzrp Session 56",
     artist: "Bzrp, Rauw",
     path: "/songs/bzrprauw.mp3",
-  },
-  {
-    name: "WHERE SHE GOES",
-    artist: "Bad Bunny",
-    path: "/songs/whereshegoes.mp3",
   },
   {
     name: "Baby Don't Hurt Me",
