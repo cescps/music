@@ -42,6 +42,119 @@ let soundBarsLottie = bodymovin.loadAnimation({
 });
 
 let trackList = [
+
+   {
+    name: "MY EYES",
+    artist: "Travis Scott",
+    path: "/songs/MyEyes.mp3",
+  },
+   {
+    name: "GOD'S COUNTRY",
+    artist: "Travis Scott",
+    path: "/songs/GodsCountry.mp3",
+  },
+ {
+    name: "HYAENA",
+    artist: "Travis Scott",
+    path: "/songs/HYAENA.mp3",
+  }, 
+  {
+    name: "PARASAIL",
+    artist: "Travis Scott",
+    path: "/songs/Parasail.mp3",
+  },
+  {
+    name: "THANK GOD",
+    artist: "Travis Scott",
+    path: "/songs/ThankGod.mp3",
+  },
+
+   {
+    name: "I KNOW ?",
+    artist: "Travis Scott",
+    path: "/songs/iknow.mp3",
+  },
+  {
+    name: "TOPIA TWINS",
+    artist: "Travis Scott",
+    path: "/songs/TopiaTwins.mp3",
+  },
+
+
+  
+   {
+    name: "No m'estima +",
+    artist: "Mushkaa",
+    path: "/songs/nomestima.mp3",
+  },
+  
+  {
+    name: "Columbia",
+    artist: "Quevedo",
+    path: "/songs/columbia.mp3",
+  },
+
+  {
+    name: "Gourmet",
+    artist: "RickyEdit",
+    path: "/songs/gourmet.mp3",
+  },
+  {
+    name: "Ulleres de Sol",
+    artist: "lildami",
+    path: "/songs/ulleresdesol.mp3",
+  },
+  
+  {
+    name: "Boy's a Liar",
+    artist: "Ice Spice",
+    path: "/songs/boysaliar.mp3",
+  },
+  {
+    name: "Modo Avión",
+    artist: "YoSoyPlex",
+    path: "/songs/ModoAvion.mp3",
+  },
+  {
+    name: "Flow Violento",
+    artist: "YoSoyPlex",
+    path: "/songs/FlowViolento.mp3",
+  },
+  {
+    name: "DISPARA ***",
+    artist: "Nicki Nicole",
+    path: "/songs/dispara.mp3",
+  },
+  {
+    name: "Se va 1 llegan 2",
+    artist: "Nicki Nicole",
+    path: "/songs/seva1llegan2.mp3",
+  },
+  {
+    name: "Antes de Perderte (OG)",
+    artist: "Duki",
+    path: "/songs/antesdeperderteog.mp3",
+  },
+  {
+    name: "Classy 101",
+    artist: "Feid, Young Miko",
+    path: "/songs/classy101.mp3",
+  },
+  {
+    name: "Mbappe",
+    artist: "Eladio Carrión",
+    path: "/songs/mbappe.mp3",
+  },
+
+
+
+
+
+
+
+
+
+  
   {
     name: "MOJABI GHOST",
     artist: "Tainy, Bad Bunny",
