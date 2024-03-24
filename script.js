@@ -7,8 +7,8 @@ var audioPlayer = function() {
     audio: document.getElementById("audio"),
     playerButtons: {
       largeToggleBtn: document.querySelector(".large-toggle-btn"),
-    //  nextTrackBtn: document.querySelector(".next-track-btn"),
-     // previousTrackBtn: document.querySelector(".previous-track-btn"),
+    nextTrackBtn: document.querySelector(".next-track-btn"),
+   previousTrackBtn: document.querySelector(".previous-track-btn"),
       smallToggleBtn: document.getElementsByClassName("small-toggle-btn")
     },
     progressBar: document.querySelector(".progress-box"),
