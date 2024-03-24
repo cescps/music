@@ -22,7 +22,7 @@ jQuery(function ($) {
             tracks = [{
                 "track": 1,
                 "name": "WHERE SHE GOES",
-                "duration": "2:46",
+                "duration": "4:32",
                 "file": "/songs/whereshegoes.mp3"
             }, {
                 "track": 2,
