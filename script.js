@@ -18,7 +18,6 @@ jQuery(function ($) {
         // initialize playlist and controls
         var index = 0,
             playing = false,
-            extension = '',
             tracks = [{
                 "track": 1,
                 "name": "WHERE SHE GOES",
