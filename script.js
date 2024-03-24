@@ -22,9 +22,9 @@ jQuery(function ($) {
             extension = '',
             tracks = [{
                 "track": 1,
-                "name": "All This Is - Joe L.'s Studio",
+                "name": "WHERE SHE GOES",
                 "duration": "2:46",
-                "file": "JLS_ATI"
+                "file": "whereshegoes.mp3"
             }, {
                 "track": 2,
                 "name": "The Forsaken - Broadwing Studio (Final Mix)",
