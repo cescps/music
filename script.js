@@ -24,7 +24,7 @@ jQuery(function ($) {
                 "track": 1,
                 "name": "WHERE SHE GOES",
                 "duration": "2:46",
-                "file": "whereshegoes.mp3"
+                "file": "/songs/whereshegoes.mp3"
             }, {
                 "track": 2,
                 "name": "The Forsaken - Broadwing Studio (Final Mix)",
