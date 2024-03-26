@@ -1,90 +1,86 @@
 <!DOCTYPE html>
-<html lang="en" >
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Songs</title>
-      <link rel="icon" type="image/png" href="logo.png"/>
+  <link rel="icon" type="image/png" href="logo.png"/>
   <link rel='stylesheet' href='//maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css'>
-<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'><link rel="stylesheet" href="style.css">
-
+  <link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.min.css'>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<div class="max-w-3xl mx-auto py-12 px-6">
+<div class="max-w-3xl mx-auto py-12 px-6" style="margin-left: 20px;"> <!-- Added left spacing -->
   <h1 class="text-4xl font-bold leading-tight mb-4">
-    música</span>.
+    música
   </h1>
+  <br>
+  <div id="previewPlayers"></div>
+  <script>
+    var playlist = [
+      { src: "/songs/makeyoumine.mp3", title: "Make You Mine - Madison Beer" },
+      { src: "/songs/strangers.mp3", title: "Strangers - Kenya Grace" },
+      { src: "/songs/xampany.mp3", title: "Xampany i Galetes - Figa Flawas" },
+      { src: "/songs/whereshegoes.mp3", title: "WHERE SHE GOES - Bad Bunny" },
+      { src: "/songs/diabla.mp3", title: "Diabla - Figa Flawas" },
+      { src: "/songs/lokura.mp3", title: "Lokura - Julieta" },
+      { src: "/songs/gta.mp3", title: "GTA - Emilia" },
+      { src: "/songs/monaco.mp3", title: "Monaco - Bad Bunny" },
+      { src: "/songs/mojabighost.mp3", title: "MOJABI GHOST - Bad Bunny" },
+      { src: "/songs/kembawalker.mp3", title: "Kemba Walker - Bad Bunny" },
+      { src: "/songs/modelito.mp3", title: "Modelito - Mora" },
+      { src: "/songs/greedy.mp3", title: "Greedy - Tate McRae" },
+      { src: "/songs/exes.mp3", title: "Exes - Tate McRae" },
+      { src: "/songs/babydance.mp3", title: "Baby Dance - Kenya Grace" },
+      { src: "/songs/heyhi.mp3", title: "Hey, Hi, How are you? - Kenya Grace" },
+      { src: "/songs/stay.mp3", title: "Stay - Kenya Grace" },
+      { src: "/songs/someoneelse.mp3", title: "Someone Else - Kenya Grace" },
+    ];
+    var currentIndex = 0;
+    var previewPlayers = document.getElementById('previewPlayers');
 
-</br>
- 
-
-<div id="previewPlayers"></div>
-
-<script>
-  var playlist = [
-{ src: "/songs/makeyoumine.mp3", title: "Make You Mine - Madison Beer" },
-{ src: "/songs/strangers.mp3", title: "Strangers - Kenya Grace" },
-{ src: "/songs/xampany.mp3", title: "Xampany i Galetes - Figa Flawas" },
-{ src: "/songs/whereshegoes.mp3", title: "WHERE SHE GOES - Bad Bunny" },
-{ src: "/songs/diabla.mp3", title: "Diabla - Figa Flawas" },
-{ src: "/songs/lokura.mp3", title: "Lokura - Julieta" },
-{ src: "/songs/gta.mp3", title: "GTA - Emilia" },
-{ src: "/songs/monaco.mp3", title: "Monaco - Bad Bunny" },
-{ src: "/songs/mojabighost.mp3", title: "MOJABI GHOST - Bad Bunny" },
-{ src: "/songs/kembawalker.mp3", title: "Kemba Walker - Bad Bunny" },
-{ src: "/songs/modelito.mp3", title: "Modelito - Mora" },
-{ src: "/songs/greedy.mp3", title: "Greedy - Tate McRae" },
-{ src: "/songs/exes.mp3", title: "Exes - Tate McRae" },
-{ src: "/songs/babydance.mp3", title: "Baby Dance - Kenya Grace" },
-{ src: "/songs/heyhi.mp3", title: "Hey, Hi, How are you? - Kenya Grace" },
-{ src: "/songs/stay.mp3", title: "Stay - Kenya Grace" },
-{ src: "/songs/someoneelse.mp3", title: "Someone Else - Kenya Grace" },
-
-  ];
-  var currentIndex = 0;
-  var previewPlayers = document.getElementById('previewPlayers');
-
-  function playNextSong() {
-    // Increment index
-    currentIndex++;
-    // If playlist is over, go back to the beginning
-    if (currentIndex >= playlist.length) {
-      currentIndex = 0;
+    function playNextSong() {
+      // Increment index
+      currentIndex++;
+      // If playlist is over, go back to the beginning
+      if (currentIndex >= playlist.length) {
+        currentIndex = 0;
+      }
+      // Change audio source to next song
+      var audioElement = previewPlayers.querySelector('audio');
+      audioElement.src = playlist[currentIndex].src;
+      // Play next song
+      audioElement.play();
     }
-    // Change audio source to next song
-    var audioElement = previewPlayers.querySelector('audio');
-    audioElement.src = playlist[currentIndex].src;
-    // Play next song
-    audioElement.play();
-  }
 
-  // Create preview players for each song
-  for (var i = 0; i < playlist.length; i++) {
-    var previewPlayer = document.createElement('div');
-    previewPlayer.setAttribute('class', 'songPreview');
-    previewPlayer.innerHTML = '<p>' + playlist[i].title + '</p><audio controls><source src="' + playlist[i].src + '" type="audio/mpeg"></audio>';
-    previewPlayers.appendChild(previewPlayer);
+    // Create preview players for each song
+    for (var i = 0; i < playlist.length; i++) {
+      var previewPlayer = document.createElement('div');
+      previewPlayer.setAttribute('class', 'songPreview');
+      previewPlayer.innerHTML = '<p>' + playlist[i].title + '</p><audio controls><source src="' + playlist[i].src + '" type="audio/mpeg"></audio>';
+      previewPlayers.appendChild(previewPlayer);
 
-    // Add event listener to each audio element for ended event
-    var audioElement = previewPlayer.querySelector('audio');
-    audioElement.addEventListener('ended', function() {
-      playNextSong();
-    });
-  }
-</script>
+      // Add event listener to each audio element for ended event
+      var audioElement = previewPlayer.querySelector('audio');
+      audioElement.addEventListener('ended', function() {
+        playNextSong();
+      });
+    }
+  </script>
 
-<style>
-  /* Style for rounded button */
-  .songPreview {
-    margin-bottom: 20px;
-  }
-  .songPreview p {
-    margin-bottom: 5px;
-  }
-</style>
+  <style>
+    /* Style for rounded button */
+    .songPreview {
+      margin-bottom: 20px;
+    }
+    .songPreview p {
+      margin-bottom: 5px;
+    }
+  </style>
 
-  <script  src="./script.js"></script>
+  <script  src="script.js"></script>
 
+</div>
 </body>
 </html>
