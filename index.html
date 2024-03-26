@@ -11,261 +11,66 @@
 
 </head>
 <body>
-<!-- partial:index.partial.html -->
-<div class="container">
+<div class="max-w-3xl mx-auto py-12 px-6">
+  <h1 class="text-4xl font-bold leading-tight mb-4">
+    música</span>.
+  </h1>
 
-  <audio id="audio" preload="none" tabindex="0">
-    			<source src="/songs/whereshegoes.mp3" data-track-number="1" />
-    			<source src="/songs/strangers.mp3" data-track-number="2" />
-    			<source src="/songs/xampany.mp3" data-track-number="3" />
-    			<source src="/songs/diabla.mp3" data-track-number="4" />
-    			<source src="/songs/makeyoumine.mp3" data-track-number="5" />    
-    			<source src="/songs/lokura.mp3" data-track-number="6" />
-    			<source src="/songs/gta.mp3" data-track-number="7" />
-    			<source src="/songs/monaco.mp3" data-track-number="8" />
-          <source src="/songs/modelito.mp3" data-track-number="9" />
-          <source src="/songs/kembawalker.mp3" data-track-number="10" />
-          <source src="songs/mojabighost.mp3" data-track-number="11" />
-          <source src="/songs/greedy.mp3" data-track-number="12" />
-          <source src="/songs/exes.mp3" data-track-number="13" />
-          <source src="/songs/babydance.mp3" data-track-number="14" />
-          <source src="/songs/heyhi.mp3" data-track-number="15" />
-          <source src="/songs/stay.mp3" data-track-number="16" />
-          <source src="/songs/someoneelse.mp3" data-track-number="17" />
+</br>
+ 
 
-    			Your browser does not support HTML5 audio.
-    		</audio>
+<div id="previewPlayers"></div>
 
-  <div class="player">
+<script>
+  var playlist = [
+    { src: "https://github.com/cescps/music/blob/main/songs/makeyoumine.mp3?raw=true", title: "Make You Mine" },
+    { src: "https://github.com/cescps/music/blob/main/songs/lokura.mp3?raw=true", title: "Lokura" },
+    { src: "https://github.com/cescps/music/blob/main/songs/mojabighost.mp3?raw=true", title: "Mojabighost" },
+    { src: "https://github.com/cescps/music/blob/main/songs/seva1llegan2.mp3?raw=true", title: "Se Va Que Llegan Dos" },
+    { src: "https://github.com/cescps/music/blob/main/songs/strangers.mp3?raw=true", title: "Strangers" }
+  ];
+  var currentIndex = 0;
+  var previewPlayers = document.getElementById('previewPlayers');
 
-    <div class="large-toggle-btn">
-      <i class="large-play-btn"><span class="screen-reader-text">Large toggle button</span></i>
-    </div>
-    <!-- /.play-box -->
+  function playNextSong() {
+    // Increment index
+    currentIndex++;
+    // If playlist is over, go back to the beginning
+    if (currentIndex >= playlist.length) {
+      currentIndex = 0;
+    }
+    // Change audio source to next song
+    var audioElement = previewPlayers.querySelector('audio');
+    audioElement.src = playlist[currentIndex].src;
+    // Play next song
+    audioElement.play();
+  }
 
-    <div class="info-box">
-      <div class="track-info-box">
-        <div class="track-title-text"></div>
-        <div class="audio-time">
-          <span class="current-time">00:00</span> /
-          <span class="duration">00:00</span>
-        </div>
-      </div>
-      <!-- /.info-box -->
+  // Create preview players for each song
+  for (var i = 0; i < playlist.length; i++) {
+    var previewPlayer = document.createElement('div');
+    previewPlayer.setAttribute('class', 'songPreview');
+    previewPlayer.innerHTML = '<p>' + playlist[i].title + '</p><audio controls><source src="' + playlist[i].src + '" type="audio/mpeg"></audio>';
+    previewPlayers.appendChild(previewPlayer);
 
-      <div class="progress-box">
-        <div class="progress-cell">
-          <div class="progress">
-            <div class="progress-buffer"></div>
-            <div class="progress-indicator"></div>
-          </div>
-        </div>
-      </div>
+    // Add event listener to each audio element for ended event
+    var audioElement = previewPlayer.querySelector('audio');
+    audioElement.addEventListener('ended', function() {
+      playNextSong();
+    });
+  }
+</script>
 
-    </div>
-    <!-- /.progress-box -->
+<style>
+  /* Style for rounded button */
+  .songPreview {
+    margin-bottom: 20px;
+  }
+  .songPreview p {
+    margin-bottom: 5px;
+  }
+</style>
 
-    <div class="controls-box">
-      <i class="previous-track-btn disabled"><span class="screen-reader-text">Previous track button</span></i>
-      <i class="next-track-btn"><span class="screen-reader-text">Next track button</span></i>
-    </div>
-   <!-- /.controls-box -->
-
-  </div>
-  <!-- /.player -->
-
-  <div class="play-list">
-
-    <div class="play-list-row" data-track-row="1">
-   <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div> 
-      <div class="track-number">
-        1.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="1">WHERE SHE GOES - Bad Bunny</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="2">
-        <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        2.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="2">Strangers - Kenya Grace</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="3">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        3.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="3">Xampany i Galetes - Figa Flawas</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="4">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        4.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="4">Diabla - Figa Flawas</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="5">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        5.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="5">Make you mine - Madison Beer</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="6">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        6.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="6">Lokura - Julieta</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="7">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        7.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="7">GTA - Emilia</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="8">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        8.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="8">Monaco - Bad Bunny</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="9">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        9.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="9">Modelito - Mora</a>
-      </div>
-    </div>
-    <div class="play-list-row" data-track-row="10">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        10.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="10">Kemba Walker - Eladio Carrión</a>
-      </div>
-    </div>
-     <div class="play-list-row" data-track-row="11">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        11.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="11">Mojabi Ghost - Bad Bunny</a>
-      </div>
-    </div>
- <div class="play-list-row" data-track-row="12">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        12.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="12">Greedy - Tate McRae</a>
-      </div>
-    </div>
- <div class="play-list-row" data-track-row="13">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        13.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="13">Exes - Tate McRae</a>
-      </div>
-    </div>
-<div class="play-list-row" data-track-row="14">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        14.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="14">Baby Dance - Kenya Grace</a>
-      </div>
-    </div>
-<div class="play-list-row" data-track-row="15">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        15.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="15">Hey, Hi, How are you? - Kenya Grace</a>
-      </div>
-    </div>
-<div class="play-list-row" data-track-row="16">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        16.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="16">Stay - Kenya Grace</a>
-      </div>
-    </div>
-<div class="play-list-row" data-track-row="17">
-      <div class="small-toggle-btn">
-        <i class="small-play-btn"><span class="screen-reader-text">Small toggle button</span></i>
-      </div>
-      <div class="track-number">
-        17.
-      </div>
-      <div class="track-title">
-        <a class="playlist-track" href="#" data-play-track="17">Someone Else - Kenya Grace</a>
-      </div>
-    </div>
-      </div>
-
-<!-- partial -->
   <script  src="./script.js"></script>
 
 </body>
